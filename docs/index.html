@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nature FYI Embed Widgets — Species, Birds, Fish, Plants, Dinosaurs for Any Website</title>
+  <meta name="description" content="Embed Nature FYI widgets — 11,251 birds, 379,774 plants, 6,142 dinosaurs, marine species, biodiversity data — on any website. 5 npm packages, zero dependencies, Shadow DOM, 4 themes.">
+  <meta name="theme-color" content="#10B981">
+  <meta name="keywords" content="species widget, bird widget, plant widget, dinosaur widget, fish widget, biodiversity, taxonomy, conservation, fyipedia, naturefyi">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Nature FYI Embed Widgets — 5 Site Family of Biodiversity Data">
+  <meta property="og:description" content="Embed bird, fish, plant, dinosaur, and species widgets from the Nature FYI family. Zero dependencies, Shadow DOM, 4 themes, free CDN.">
+  <meta property="og:url" content="https://widget.naturefyi.com">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://naturefyi.com/static/og/homepage.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Nature FYI">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nature FYI Embed Widgets — 5 npm packages for biodiversity">
+  <meta name="twitter:description" content="Birds, fish, plants, dinosaurs, species — embed in one line of HTML. Zero dependencies, Shadow DOM, free CDN.">
+  <meta name="twitter:image" content="https://naturefyi.com/static/og/homepage.png">
+
+  <!-- Canonical + SEO -->
+  <link rel="canonical" href="https://widget.naturefyi.com">
+  <meta name="author" content="FYIPedia">
+  <meta name="robots" content="index, follow">
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://naturefyi.com/static/favicon.ico" sizes="32x32">
+  <link rel="icon" href="https://naturefyi.com/static/icon.svg" type="image/svg+xml">
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://speciesfyi.com">
+  <link rel="dns-prefetch" href="https://birdfyi.com">
+  <link rel="dns-prefetch" href="https://fishfyi.com">
+  <link rel="dns-prefetch" href="https://plantfyi.com">
+  <link rel="dns-prefetch" href="https://dinofyi.com">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Nature FYI Embed Widgets",
+        "url": "https://widget.naturefyi.com",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "description": "Family of 5 embeddable widget packages for biodiversity reference data: SpeciesFYI, BirdFYI, FishFYI, PlantFYI, DinoFYI. Zero dependencies, Shadow DOM isolation, 4 themes, free CDN.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "FYIPedia",
+          "url": "https://fyipedia.com",
+          "logo": "https://fyipedia.com/static/icon.svg"
+        },
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Nature FYI",
+          "url": "https://naturefyi.com"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "FYIPedia", "item": "https://fyipedia.com"},
+          {"@type": "ListItem", "position": 2, "name": "Nature FYI", "item": "https://naturefyi.com"},
+          {"@type": "ListItem", "position": 3, "name": "Widget Family Docs"}
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "name": "Nature FYI Embed Packages",
+        "numberOfItems": 5,
+        "itemListElement": [
+          {"@type": "SoftwareSourceCode", "name": "speciesfyi-embed", "url": "https://www.npmjs.com/package/speciesfyi-embed", "codeRepository": "https://github.com/fyipedia/speciesfyi-embed", "programmingLanguage": "TypeScript", "runtimePlatform": "Browser", "license": "https://opensource.org/licenses/MIT"},
+          {"@type": "SoftwareSourceCode", "name": "birdfyi-embed", "url": "https://www.npmjs.com/package/birdfyi-embed", "codeRepository": "https://github.com/fyipedia/birdfyi-embed", "programmingLanguage": "TypeScript", "runtimePlatform": "Browser", "license": "https://opensource.org/licenses/MIT"},
+          {"@type": "SoftwareSourceCode", "name": "fishfyi-embed", "url": "https://www.npmjs.com/package/fishfyi-embed", "codeRepository": "https://github.com/fyipedia/fishfyi-embed", "programmingLanguage": "TypeScript", "runtimePlatform": "Browser", "license": "https://opensource.org/licenses/MIT"},
+          {"@type": "SoftwareSourceCode", "name": "plantfyi-embed", "url": "https://www.npmjs.com/package/plantfyi-embed", "codeRepository": "https://github.com/fyipedia/plantfyi-embed", "programmingLanguage": "TypeScript", "runtimePlatform": "Browser", "license": "https://opensource.org/licenses/MIT"},
+          {"@type": "SoftwareSourceCode", "name": "dinofyi-embed", "url": "https://www.npmjs.com/package/dinofyi-embed", "codeRepository": "https://github.com/fyipedia/dinofyi-embed", "programmingLanguage": "TypeScript", "runtimePlatform": "Browser", "license": "https://opensource.org/licenses/MIT"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "What biodiversity data sources do Nature FYI widgets use?", "acceptedAnswer": {"@type": "Answer", "text": "Each site aggregates from authoritative sources: BirdFYI uses IUCN Red List + eBird taxonomy (11,251 species). PlantFYI integrates POWO + Kew Gardens (379,774 plants). FishFYI uses FishBase + WoRMS marine registry. DinoFYI references The Paleobiology Database (6,142 dinosaurs). SpeciesFYI cross-links across kingdoms via NCBI Taxonomy."}},
+          {"@type": "Question", "name": "Are conservation status indicators (IUCN, CITES) accurate?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Each widget includes the current IUCN Red List status (LC/NT/VU/EN/CR/EW/EX) where applicable. Data is refreshed quarterly from the IUCN authoritative source. CITES Appendix listings are surfaced for relevant species. Conservation status is shown with color-coded badges for quick visual identification."}},
+          {"@type": "Question", "name": "Can I use Nature FYI widgets for educational content?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — free for educational, commercial, and personal use under MIT license. Widgets include taxonomy (kingdom/phylum/class/order/family/genus/species), distribution maps where available, habitat info, and conservation status. Each widget shows a 'Powered by [site]' backlink — the only requirement."}},
+          {"@type": "Question", "name": "Do widgets work in 15 languages?", "acceptedAnswer": {"@type": "Answer", "text": "Each Nature FYI site supports 15 languages (English, Korean, Japanese, Chinese, Spanish, French, German, Portuguese, Russian, Italian, Vietnamese, Indonesian, Turkish, Arabic, Hindi). Set data-lang attribute on the widget div to override. Default uses browser Accept-Language."}},
+          {"@type": "Question", "name": "Why a family of 5 sites vs one combined nature site?", "acceptedAnswer": {"@type": "Answer", "text": "Each Nature FYI site has dedicated domain depth: BirdFYI optimizes for ornithology queries with eBird integration. PlantFYI specializes in botany with hardiness zones and cultivation. FishFYI covers marine + freshwater with WoRMS taxonomy. DinoFYI provides paleontology context that doesn't fit other sites. The family ecosystem cross-links related concepts."}}
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- JetBrains Mono for code blocks -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: { accent: '#10B981' },
+          fontFamily: { mono: ['"JetBrains Mono"', '"Fira Code"', 'ui-monospace', 'monospace'] }
+        }
+      }
+    }
+  </script>
+
+  <!-- Dark mode FOUC prevention -->
+  <script>
+    (function(){
+      var t = localStorage.getItem('theme');
+      if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
+
+  <!-- Alpine.js CDN -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.9/dist/cdn.min.js"></script>
+
+  <!-- All 5 embed scripts via jsDelivr -->
+  <script src="https://cdn.jsdelivr.net/npm/speciesfyi-embed@1/dist/embed.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/birdfyi-embed@1/dist/embed.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fishfyi-embed@1/dist/embed.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/plantfyi-embed@1/dist/embed.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dinofyi-embed@1/dist/embed.min.js"></script>
+
+  <style>
+    [x-cloak]{display:none!important}
+    :root{--accent:#10B981} .accent-text{color:var(--accent)} .accent-bg{background-color:var(--accent)} .accent-border{border-color:var(--accent)}
+    pre{tab-size:2;margin:0}
+    .code-block{background:#0f172a;color:#e2e8f0;border-radius:8px;padding:1rem;font-size:13px;line-height:1.7;overflow-x:auto;font-family:'JetBrains Mono',ui-monospace,monospace}
+    .hl-tag{color:#7dd3fc} .hl-attr{color:#86efac} .hl-val{color:#fde68a} .hl-comment{color:#475569;font-style:italic}
+    .site-card { transition: all 0.2s; }
+    .site-card:hover { transform: translateY(-2px); box-shadow: 0 10px 30px -10px rgba(16, 185, 129, 0.3); }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100">
+
+  <!-- HEADER -->
+  <header class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
+      <a href="https://naturefyi.com" class="flex items-center gap-2 font-bold text-lg" style="color: #10B981">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <span>Nature FYI</span>
+        <span class="text-xs font-normal text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded-full font-sans">Widget Family</span>
+      </a>
+      <nav class="hidden sm:flex items-center gap-6 text-sm text-slate-600 dark:text-slate-400">
+        <a href="#sites" class="hover:text-accent">5 Sites</a>
+        <a href="#quick-start" class="hover:text-accent">Quick Start</a>
+        <a href="#widgets" class="hover:text-accent">Gallery</a>
+        <a href="#faq" class="hover:text-accent">FAQ</a>
+        <a href="https://github.com/fyipedia" class="hover:text-accent" target="_blank" rel="noopener">GitHub ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="bg-gradient-to-br from-emerald-50 via-white to-teal-50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900 border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-20 text-center">
+      <span class="inline-block px-3 py-1 text-xs font-semibold tracking-wider uppercase rounded-full" style="background: #10B981; color: white">5 Widget Packages · 1 Ecosystem</span>
+      <h1 class="mt-6 text-4xl sm:text-5xl font-bold tracking-tight text-slate-900 dark:text-slate-100">Nature FYI <span class="accent-text">Embed Widgets</span></h1>
+      <p class="mt-6 text-lg sm:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
+        Embed <a href="https://speciesfyi.com" class="accent-text font-semibold hover:underline">species</a>,
+        <a href="https://birdfyi.com" class="accent-text font-semibold hover:underline">birds</a>,
+        <a href="https://fishfyi.com" class="accent-text font-semibold hover:underline">fish</a>,
+        <a href="https://plantfyi.com" class="accent-text font-semibold hover:underline">plants</a>, and
+        <a href="https://dinofyi.com" class="accent-text font-semibold hover:underline">dinosaurs</a>
+        in any website. <strong>One ecosystem, 5 npm packages, IUCN conservation status, 15 languages.</strong>
+      </p>
+      <p class="mt-4 text-base text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
+        Zero dependencies. Shadow DOM. 4 themes. Backed by IUCN, eBird, POWO, FishBase, Paleobiology Database. Free CDN.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
+        <a href="#quick-start" class="px-5 py-2.5 rounded-lg font-medium accent-bg text-white hover:opacity-90 transition">Get Started</a>
+        <a href="https://naturefyi.com" class="px-5 py-2.5 rounded-lg font-medium border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition">Browse Nature FYI →</a>
+        <a href="https://github.com/fyipedia" class="px-5 py-2.5 rounded-lg font-medium border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 SITES OVERVIEW -->
+  <section id="sites" class="py-16 sm:py-20 bg-white dark:bg-slate-900">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <h2 class="text-3xl font-bold text-center text-slate-900 dark:text-slate-100">The Nature FYI Family</h2>
+      <p class="mt-3 text-center text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Each site powers one widget package backed by authoritative biodiversity sources.</p>
+
+      <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="site-card p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center text-white text-lg font-bold" style="background: linear-gradient(135deg, #059669, #10B981)">S</div>
+            <div>
+              <h3 class="font-bold text-lg"><a href="https://speciesfyi.com" class="accent-text hover:underline">SpeciesFYI</a></h3>
+              <p class="text-xs text-slate-500">speciesfyi.com · <a href="https://www.npmjs.com/package/speciesfyi-embed" target="_blank" rel="noopener" class="hover:underline">npm</a></p>
+            </div>
+          </div>
+          <p class="text-sm text-slate-600 dark:text-slate-400">Cross-kingdom species taxonomy. <strong>Full Linnaean hierarchy</strong>, NCBI integration, country-level distribution, conservation status.</p>
+          <div class="mt-4 flex flex-wrap gap-2 text-xs">
+            <a href="https://speciesfyi.com/species/" class="px-2 py-1 rounded bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300 hover:bg-emerald-200">Browse</a>
+            <a href="https://speciesfyi.com/taxon/" class="px-2 py-1 rounded bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300 hover:bg-emerald-200">Taxonomy</a>
+            <a href="https://speciesfyi.com/glossary/" class="px-2 py-1 rounded bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300 hover:bg-emerald-200">Glossary</a>
+          </div>
+        </article>
+
+        <article class="site-card p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center text-white text-lg font-bold" style="background: linear-gradient(135deg, #10B981, #06B6D4)">B</div>
+            <div>
+              <h3 class="font-bold text-lg"><a href="https://birdfyi.com" class="accent-text hover:underline">BirdFYI</a></h3>
+              <p class="text-xs text-slate-500">birdfyi.com · <a href="https://www.npmjs.com/package/birdfyi-embed" target="_blank" rel="noopener" class="hover:underline">npm</a></p>
+            </div>
+          </div>
+          <p class="text-sm text-slate-600 dark:text-slate-400"><strong>11,251 birds</strong> · orders, families · eBird taxonomy · IUCN Red List status · migration patterns · habitat info.</p>
+          <div class="mt-4 flex flex-wrap gap-2 text-xs">
+            <a href="https://birdfyi.com/birds/" class="px-2 py-1 rounded bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300 hover:bg-emerald-200">Browse</a>
+            <a href="https://birdfyi.com/orders/" class="px-2 py-1 rounded bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300 hover:bg-emerald-200">Orders</a>
+            <a href="https://birdfyi.com/conservation/" class="px-2 py-1 rounded bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300 hover:bg-emerald-200">Conservation</a>
+          </div>
+        </article>
+
+        <article class="site-card p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center text-white text-lg font-bold" style="background: linear-gradient(135deg, #06B6D4, #0EA5E9)">F</div>
+            <div>
+              <h3 class="font-bold text-lg"><a href="https://fishfyi.com" class="accent-text hover:underline">FishFYI</a></h3>
+              <p class="text-xs text-slate-500">fishfyi.com · <a href="https://www.npmjs.com/package/fishfyi-embed" target="_blank" rel="noopener" class="hover:underline">npm</a></p>
+            </div>
+          </div>
+          <p class="text-sm text-slate-600 dark:text-slate-400">Marine + freshwater fish. <strong>WoRMS taxonomy</strong>, FishBase integration, habitat (pelagic/benthic), conservation, commercial fisheries.</p>
+          <div class="mt-4 flex flex-wrap gap-2 text-xs">
+            <a href="https://fishfyi.com/fish/" class="px-2 py-1 rounded bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300 hover:bg-emerald-200">Browse</a>
+            <a href="https://fishfyi.com/habitats/" class="px-2 py-1 rounded bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300 hover:bg-emerald-200">Habitats</a>
+            <a href="https://fishfyi.com/glossary/" class="px-2 py-1 rounded bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300 hover:bg-emerald-200">Glossary</a>
+          </div>
+        </article>
+
+        <article class="site-card p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center text-white text-lg font-bold" style="background: linear-gradient(135deg, #16A34A, #65A30D)">P</div>
+            <div>
+              <h3 class="font-bold text-lg"><a href="https://plantfyi.com" class="accent-text hover:underline">PlantFYI</a></h3>
+              <p class="text-xs text-slate-500">plantfyi.com · <a href="https://www.npmjs.com/package/plantfyi-embed" target="_blank" rel="noopener" class="hover:underline">npm</a></p>
+            </div>
+          </div>
+          <p class="text-sm text-slate-600 dark:text-slate-400"><strong>379,774 plants</strong> · POWO + Kew Gardens · cultivation tips · hardiness zones · uses (edible/medicinal/ornamental) · taxonomy.</p>
+          <div class="mt-4 flex flex-wrap gap-2 text-xs">
+            <a href="https://plantfyi.com/plants/" class="px-2 py-1 rounded bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300 hover:bg-emerald-200">Browse</a>
+            <a href="https://plantfyi.com/families/" class="px-2 py-1 rounded bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300 hover:bg-emerald-200">Families</a>
+            <a href="https://plantfyi.com/hardiness-zones/" class="px-2 py-1 rounded bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300 hover:bg-emerald-200">Zones</a>
+          </div>
+        </article>
+
+        <article class="site-card p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center text-white text-lg font-bold" style="background: linear-gradient(135deg, #B45309, #92400E)">D</div>
+            <div>
+              <h3 class="font-bold text-lg"><a href="https://dinofyi.com" class="accent-text hover:underline">DinoFYI</a></h3>
+              <p class="text-xs text-slate-500">dinofyi.com · <a href="https://www.npmjs.com/package/dinofyi-embed" target="_blank" rel="noopener" class="hover:underline">npm</a></p>
+            </div>
+          </div>
+          <p class="text-sm text-slate-600 dark:text-slate-400"><strong>6,142 dinosaurs</strong> · The Paleobiology Database · geological eras (Triassic/Jurassic/Cretaceous) · clade tree · fossil sites · size comparisons.</p>
+          <div class="mt-4 flex flex-wrap gap-2 text-xs">
+            <a href="https://dinofyi.com/dinos/" class="px-2 py-1 rounded bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300 hover:bg-emerald-200">Browse</a>
+            <a href="https://dinofyi.com/eras/" class="px-2 py-1 rounded bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300 hover:bg-emerald-200">Eras</a>
+            <a href="https://dinofyi.com/clades/" class="px-2 py-1 rounded bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300 hover:bg-emerald-200">Clades</a>
+          </div>
+        </article>
+
+        <article class="site-card p-6 rounded-xl border-2 border-dashed border-emerald-300 dark:border-emerald-700 bg-emerald-50 dark:bg-emerald-950/30">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center text-white text-lg font-bold" style="background: linear-gradient(135deg, #6366F1, #8B5CF6, #A855F7)">∞</div>
+            <div>
+              <h3 class="font-bold text-lg"><a href="https://fyipedia.com" class="accent-text hover:underline">FYIPedia</a></h3>
+              <p class="text-xs text-slate-500">fyipedia.com · umbrella ecosystem</p>
+            </div>
+          </div>
+          <p class="text-sm text-slate-600 dark:text-slate-400">Nature FYI is one of <strong>11 FYI Families</strong>. Browse 53+ sites, 1M+ records, and a unified developer toolchain at <a href="https://fyipedia.com" class="accent-text hover:underline font-medium">FYIPedia →</a></p>
+          <div class="mt-4 flex flex-wrap gap-2 text-xs">
+            <a href="https://fyipedia.com/families/" class="px-2 py-1 rounded bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300 hover:bg-emerald-200">All Families</a>
+            <a href="https://fyipedia.com/developers/" class="px-2 py-1 rounded bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300 hover:bg-emerald-200">Developers</a>
+            <a href="https://fyipedia.com/api/" class="px-2 py-1 rounded bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300 hover:bg-emerald-200">Unified API</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK START -->
+  <section id="quick-start" class="py-16 sm:py-20 bg-slate-50 dark:bg-slate-950">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <h2 class="text-3xl font-bold text-center text-slate-900 dark:text-slate-100">Quick Start (90 seconds)</h2>
+      <p class="mt-3 text-center text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Add a script tag, drop a div with a data attribute, refresh. Each widget fetches from the corresponding API and renders inside a Shadow DOM.</p>
+
+      <div class="mt-8 max-w-3xl mx-auto">
+        <pre class="code-block"><code><span class="hl-comment">&lt;!-- 1. Load one or more embed scripts (zero deps) --&gt;</span>
+<span class="hl-tag">&lt;script</span> <span class="hl-attr">src</span>=<span class="hl-val">"https://cdn.jsdelivr.net/npm/birdfyi-embed@1/dist/embed.min.js"</span><span class="hl-tag">&gt;&lt;/script&gt;</span>
+<span class="hl-tag">&lt;script</span> <span class="hl-attr">src</span>=<span class="hl-val">"https://cdn.jsdelivr.net/npm/plantfyi-embed@1/dist/embed.min.js"</span><span class="hl-tag">&gt;&lt;/script&gt;</span>
+
+<span class="hl-comment">&lt;!-- 2. Drop widgets anywhere on your page --&gt;</span>
+<span class="hl-tag">&lt;div</span> <span class="hl-attr">data-birdfyi</span>=<span class="hl-val">"entity"</span> <span class="hl-attr">data-slug</span>=<span class="hl-val">"bald-eagle"</span><span class="hl-tag">&gt;&lt;/div&gt;</span>
+<span class="hl-tag">&lt;div</span> <span class="hl-attr">data-plantfyi</span>=<span class="hl-val">"entity"</span> <span class="hl-attr">data-slug</span>=<span class="hl-val">"oak"</span><span class="hl-tag">&gt;&lt;/div&gt;</span></code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-16 sm:py-20 bg-white dark:bg-slate-900">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <h2 class="text-3xl font-bold text-center text-slate-900 dark:text-slate-100">Frequently Asked Questions</h2>
+      <div class="mt-10 space-y-4">
+        <details class="p-5 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950">
+          <summary class="font-semibold cursor-pointer">What biodiversity data sources do Nature FYI widgets use?</summary>
+          <p class="mt-3 text-slate-600 dark:text-slate-400">Each site aggregates from authoritative sources: <a href="https://birdfyi.com" class="accent-text hover:underline">BirdFYI</a> uses IUCN Red List + eBird taxonomy (11,251 species). <a href="https://plantfyi.com" class="accent-text hover:underline">PlantFYI</a> integrates POWO + Kew Gardens (379,774 plants). <a href="https://fishfyi.com" class="accent-text hover:underline">FishFYI</a> uses FishBase + WoRMS marine registry. <a href="https://dinofyi.com" class="accent-text hover:underline">DinoFYI</a> references The Paleobiology Database (6,142 dinosaurs). <a href="https://speciesfyi.com" class="accent-text hover:underline">SpeciesFYI</a> cross-links across kingdoms via NCBI Taxonomy.</p>
+        </details>
+        <details class="p-5 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950">
+          <summary class="font-semibold cursor-pointer">Are conservation status indicators accurate?</summary>
+          <p class="mt-3 text-slate-600 dark:text-slate-400">Yes. Widgets show current <strong>IUCN Red List</strong> status (LC/NT/VU/EN/CR/EW/EX) and CITES Appendix listings where applicable. Data refreshes quarterly. Color-coded badges for quick visual scanning.</p>
+        </details>
+        <details class="p-5 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950">
+          <summary class="font-semibold cursor-pointer">Can I use widgets for educational content?</summary>
+          <p class="mt-3 text-slate-600 dark:text-slate-400">Yes — free for educational, commercial, and personal use under MIT license. Widgets include taxonomy hierarchy, distribution data, habitat info, and conservation status. Each widget shows a "Powered by [site]" backlink — the only requirement.</p>
+        </details>
+        <details class="p-5 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950">
+          <summary class="font-semibold cursor-pointer">Do widgets support 15 languages?</summary>
+          <p class="mt-3 text-slate-600 dark:text-slate-400">Yes. Set <code>data-lang</code> attribute or default to browser <code>Accept-Language</code>. Supported: English, Korean, Japanese, Chinese, Spanish, French, German, Portuguese, Russian, Italian, Vietnamese, Indonesian, Turkish, Arabic, Hindi.</p>
+        </details>
+        <details class="p-5 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950">
+          <summary class="font-semibold cursor-pointer">Why a family of 5 sites vs one combined nature site?</summary>
+          <p class="mt-3 text-slate-600 dark:text-slate-400">Each Nature FYI site has dedicated domain depth: <a href="https://birdfyi.com" class="accent-text hover:underline">BirdFYI</a> optimizes for ornithology queries. <a href="https://plantfyi.com" class="accent-text hover:underline">PlantFYI</a> specializes in botany with hardiness zones. <a href="https://fishfyi.com" class="accent-text hover:underline">FishFYI</a> covers marine + freshwater. <a href="https://dinofyi.com" class="accent-text hover:underline">DinoFYI</a> provides paleontology context. The family ecosystem cross-links related concepts (e.g., extinct species → DinoFYI; conservation → BirdFYI/FishFYI).</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEARN MORE -->
+  <section class="py-16 sm:py-20 bg-slate-50 dark:bg-slate-950">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <h2 class="text-3xl font-bold text-center text-slate-900 dark:text-slate-100">Learn More</h2>
+      <div class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+          <h3 class="font-bold mb-2">SpeciesFYI Resources</h3>
+          <ul class="text-sm space-y-1 text-slate-600 dark:text-slate-400">
+            <li><a href="https://speciesfyi.com/species/" class="accent-text hover:underline">All Species</a></li>
+            <li><a href="https://speciesfyi.com/taxon/" class="accent-text hover:underline">Taxonomy Tree</a></li>
+            <li><a href="https://speciesfyi.com/country/" class="accent-text hover:underline">By Country</a></li>
+            <li><a href="https://speciesfyi.com/glossary/" class="accent-text hover:underline">Glossary</a></li>
+          </ul>
+        </div>
+        <div class="p-5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+          <h3 class="font-bold mb-2">BirdFYI Resources</h3>
+          <ul class="text-sm space-y-1 text-slate-600 dark:text-slate-400">
+            <li><a href="https://birdfyi.com/birds/" class="accent-text hover:underline">11,251 Birds</a></li>
+            <li><a href="https://birdfyi.com/orders/" class="accent-text hover:underline">Orders</a></li>
+            <li><a href="https://birdfyi.com/conservation/" class="accent-text hover:underline">IUCN Status</a></li>
+            <li><a href="https://birdfyi.com/glossary/" class="accent-text hover:underline">Ornithology Glossary</a></li>
+          </ul>
+        </div>
+        <div class="p-5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+          <h3 class="font-bold mb-2">FishFYI Resources</h3>
+          <ul class="text-sm space-y-1 text-slate-600 dark:text-slate-400">
+            <li><a href="https://fishfyi.com/fish/" class="accent-text hover:underline">All Fish</a></li>
+            <li><a href="https://fishfyi.com/habitats/" class="accent-text hover:underline">Habitats</a></li>
+            <li><a href="https://fishfyi.com/families/" class="accent-text hover:underline">Families</a></li>
+            <li><a href="https://fishfyi.com/glossary/" class="accent-text hover:underline">Glossary</a></li>
+          </ul>
+        </div>
+        <div class="p-5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+          <h3 class="font-bold mb-2">PlantFYI Resources</h3>
+          <ul class="text-sm space-y-1 text-slate-600 dark:text-slate-400">
+            <li><a href="https://plantfyi.com/plants/" class="accent-text hover:underline">379K Plants</a></li>
+            <li><a href="https://plantfyi.com/families/" class="accent-text hover:underline">Families</a></li>
+            <li><a href="https://plantfyi.com/hardiness-zones/" class="accent-text hover:underline">Hardiness Zones</a></li>
+            <li><a href="https://plantfyi.com/uses/" class="accent-text hover:underline">By Use</a></li>
+          </ul>
+        </div>
+        <div class="p-5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+          <h3 class="font-bold mb-2">DinoFYI Resources</h3>
+          <ul class="text-sm space-y-1 text-slate-600 dark:text-slate-400">
+            <li><a href="https://dinofyi.com/dinos/" class="accent-text hover:underline">6,142 Dinosaurs</a></li>
+            <li><a href="https://dinofyi.com/eras/" class="accent-text hover:underline">Geological Eras</a></li>
+            <li><a href="https://dinofyi.com/clades/" class="accent-text hover:underline">Clade Tree</a></li>
+            <li><a href="https://dinofyi.com/glossary/" class="accent-text hover:underline">Paleontology Glossary</a></li>
+          </ul>
+        </div>
+        <div class="p-5 rounded-lg bg-white dark:bg-slate-900 border-2 border-emerald-300 dark:border-emerald-700">
+          <h3 class="font-bold mb-2">FYIPedia Ecosystem</h3>
+          <ul class="text-sm space-y-1 text-slate-600 dark:text-slate-400">
+            <li><a href="https://fyipedia.com" class="accent-text hover:underline">FYIPedia Home</a></li>
+            <li><a href="https://fyipedia.com/families/" class="accent-text hover:underline">All 11 FYI Families</a></li>
+            <li><a href="https://naturefyi.com" class="accent-text hover:underline">Nature FYI Home</a></li>
+            <li><a href="https://fyipedia.com/developers/" class="accent-text hover:underline">Developer Hub</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
+        <div>
+          <h3 class="font-bold text-slate-900 dark:text-slate-100 mb-3">Nature FYI</h3>
+          <ul class="space-y-2 text-slate-600 dark:text-slate-400">
+            <li><a href="https://speciesfyi.com" class="hover:accent-text">SpeciesFYI</a></li>
+            <li><a href="https://birdfyi.com" class="hover:accent-text">BirdFYI</a></li>
+            <li><a href="https://fishfyi.com" class="hover:accent-text">FishFYI</a></li>
+            <li><a href="https://plantfyi.com" class="hover:accent-text">PlantFYI</a></li>
+            <li><a href="https://dinofyi.com" class="hover:accent-text">DinoFYI</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-bold text-slate-900 dark:text-slate-100 mb-3">Widget Docs</h3>
+          <ul class="space-y-2 text-slate-600 dark:text-slate-400">
+            <li><a href="https://widget.speciesfyi.com" class="hover:accent-text">widget.speciesfyi.com</a></li>
+            <li><a href="https://widget.birdfyi.com" class="hover:accent-text">widget.birdfyi.com</a></li>
+            <li><a href="https://widget.fishfyi.com" class="hover:accent-text">widget.fishfyi.com</a></li>
+            <li><a href="https://widget.plantfyi.com" class="hover:accent-text">widget.plantfyi.com</a></li>
+            <li><a href="https://widget.dinofyi.com" class="hover:accent-text">widget.dinofyi.com</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-bold text-slate-900 dark:text-slate-100 mb-3">npm Packages</h3>
+          <ul class="space-y-2 text-slate-600 dark:text-slate-400">
+            <li><a href="https://www.npmjs.com/package/speciesfyi-embed" target="_blank" rel="noopener" class="hover:accent-text">speciesfyi-embed</a></li>
+            <li><a href="https://www.npmjs.com/package/birdfyi-embed" target="_blank" rel="noopener" class="hover:accent-text">birdfyi-embed</a></li>
+            <li><a href="https://www.npmjs.com/package/fishfyi-embed" target="_blank" rel="noopener" class="hover:accent-text">fishfyi-embed</a></li>
+            <li><a href="https://www.npmjs.com/package/plantfyi-embed" target="_blank" rel="noopener" class="hover:accent-text">plantfyi-embed</a></li>
+            <li><a href="https://www.npmjs.com/package/dinofyi-embed" target="_blank" rel="noopener" class="hover:accent-text">dinofyi-embed</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-bold text-slate-900 dark:text-slate-100 mb-3">Ecosystem</h3>
+          <ul class="space-y-2 text-slate-600 dark:text-slate-400">
+            <li><a href="https://fyipedia.com" class="hover:accent-text">FYIPedia</a></li>
+            <li><a href="https://github.com/fyipedia" target="_blank" rel="noopener" class="hover:accent-text">GitHub Org</a></li>
+            <li><a href="https://naturefyi.com" class="hover:accent-text">Nature FYI</a></li>
+            <li><a href="https://creativefyi.com" class="hover:accent-text">Sister: Creative FYI</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800 text-sm text-slate-500 dark:text-slate-400 flex flex-wrap items-center justify-between gap-4">
+        <p>Built with care by <a href="https://fyipedia.com" class="accent-text hover:underline">FYIPedia</a>. MIT licensed.</p>
+        <p>Powered by <a href="https://naturefyi.com" class="accent-text hover:underline">Nature FYI</a> · IUCN/eBird/POWO/FishBase/Paleobiology DB.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
